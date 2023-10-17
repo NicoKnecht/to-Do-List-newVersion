@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kavivanar&display=swap');
+
+$secundaryFont:  'Kavivanar', cursive;
+$fontColor:#F0F0F0;
+$gralPadding:0% 15%;
+
+%flexCenter{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    //border: red solid 1px;
+}
+.main-container{
+    min-height: 100vh;
+    .tasksCreator-container{/*esta caja es para alinear*/
+        display:flex;
+        flex-direction: column;
+       
+       
+
+        .tasksCreator-wrapper{
+            @extend %flexCenter;
+            flex-direction: column;
+            align-items: flex-start;
+            min-height: 40vh;
+            width: 100%;
+            background: linear-gradient(140deg, rgba(246,107,107,1) 0%, rgba(91,113,191,1) 90%);  
+            padding:$gralPadding; 
+
+            @media (max-width:768px){
+                padding: 10%;
+                min-height: 35vh;
+                align-items: center;
+            }
+            .title{
+                color:$fontColor;
+                font-size: 4.4vw;
+                font-weight: 700;
+                margin-bottom: 2rem;
+
+                @media (max-width:768px){
+                    font-size: 6.2vw;
+                    
+                }
+                @media (max-width:480px){
+                    font-size: 6.8vw;   
+                }
+            }
+            .tasksCreator{
+                width: 100%;
+                display: flex; 
+                justify-content: space-between;
+
+                @media  (max-width:768px){   
+                   flex-direction: column;
+                   align-items: flex-end;
+                    
+                }
+                
+                .input{
+                    background-image: url('../img/lupa.png'); 
+                    background-color:transparent;
+                    background-position: left 10px center;
+                    background-repeat: no-repeat;
+                    background-size:contain ; 
+                    border:solid $fontColor;
+                    border-radius: 8px;
+                    font-size: 1rem;
+                    width: 75%;
+                    padding:0.5rem 0rem 0.5rem 3rem;
+                    margin-right: 1.2rem;
+                    color:#EBEBEB;
+                    outline: 0;/*le saca el borde interno al input( el borde de seleccion)*/
+                    
+
+                    @media (max-width:768px){
+                        width: 100%;  
+                        margin-right: 0rem;
+                    }
+
+
+                    &::placeholder{
+                        color:#EBEBEB;
+                        opacity: 0.5; 
+                        
+                    }
+                }
+                .btn{
+                    background-color:transparent;
+                    border:solid $fontColor;
+                    border-radius: 10px;
+                    padding:0.5rem 1rem ;
+                    color:$fontColor;
+                    font-weight: 600;
+                    outline: 0; 
+                    width: 25%;
+
+                    @media (max-width:768px){
+                        padding: 0.5rem 0rem;  
+                        margin-top: 1.8rem;
+                    }
+                    @media (max-width:480px){
+                        width: 100%;
+                        
+                    }
+                
+                    &:hover{
+                        cursor: pointer;
+                    }
+
+                    &:active{
+                        box-shadow: 0px 0px 5px #171717;
+                    }
+                }
+            }
+        }
+        .peddingTasks-wrapper{
+            display: flex;
+            flex-direction: column;
+            padding:$gralPadding;
+            margin-top:3rem;
+
+            @media (max-width:768px){
+                padding: 10%;
+                margin-top: 2rem;
+
+            }
+            @media (max-width:480px){
+                padding: 5%;
+                margin-top: 2rem;
+
+            }
+            .subTitle{
+                font-family: $secundaryFont;
+                font-size:2.3vw;
+                font-weight:600;
+
+                @media (max-width:768px){
+                 font-size: 1.2rem;
+                }
+            }
+            .peddingTasks{
+                width: 100%;
+                .withoutTasks{// Estilo de oraciones que aparecen cuando no hay tareas ingresadas
+                    padding: 2rem;
+                    font-family: $secundaryFont;
+                    font-size: 1.3rem;
+                    color: #8B9899 ;
+
+                    @media (max-width:768px){
+                        font-size: 1.2rem;
+                       }
+                }
+                .taskList{
+                    margin-top:1rem;
+                    background-color:#EBEBEB;
+                    border-radius: 4px;
+                    display: flex;
+                    align-items: center;
+                    justify-content:space-between;
+                    padding:0.7rem;  
+
+                    @media (max-width:768px){
+                      flex-direction: column;
+                      align-items: flex-end;
+
+                    }
+                        .checkYtextWrapper{
+                            display: flex;
+                            align-items: center;
+                            overflow: hidden;/* cuando se excribe"ddddddddddddddddddddd", pero mas largo,
+                                               al no cortarse la palabra , esta sobrepasa la caja y rompe todo. con el hiden esto no pasa
+                                                que alguien escriba eso solo deberia oasar por error o boludeando igual  */
+                             @media (max-width:768px){
+                                 width: 100%;
+                                }  
+
+                            .taskCheckbox{
+                                font-weight: 700;
+                                display: block;
+                                padding:0rem 0.5rem;
+
+                                &:hover{
+                                    cursor: pointer;
+                                }
+
+                                &:checked + .taskText{ //+ selecciona hermanos adyacentes
+                                text-decoration: line-through;
+                                text-decoration-color:black;
+                                color:green;
+                                
+                                }
+                            
+                            }
+                            .taskInputEdit{// clase agregada con classList.add
+                                width: 100vw;
+                                padding: 0.8rem;
+                                font-size: 0.9rem;
+                            }
+                            .taskText{
+                                font-family: $secundaryFont;
+                                font-size: 1.1rem;
+                                font-weight: 600;
+                                display: block;
+                                padding:0rem 0.5rem;
+                                line-height: 1.5rem;
+
+                                            
+                                @media (max-width:768px){
+                                    font-size: 1rem;
+                                }
+                                
+                                }   
+                            }
+                            .buttonWrapper{
+                                display: flex;
+                               
+                                flex-direction: column;
+                                align-items: end;
+                                text-align: center;
+                                margin-left: 0.2rem;
+
+                                @media (max-width:768px){
+                                    flex-direction: row;
+                                    justify-content: end;
+                                    margin-top: 1.2rem;
+                                
+                                }
+
+                            .btnDelete {
+                                width: 3.2rem;
+                                height: fit-content;
+                                // border:solid #828282;
+                                // border-radius: 10px;
+                                border: none;
+                                font-weight: 600;
+                                font-size: 1.2rem;
+                                outline: 0;
+                                margin-top: 0.2rem;
+                                
+                                @media (max-width:768px){
+                                    margin-left:0.6rem;
+                                    
+                                }
+                                
+                                &:active{
+                                    box-shadow: 0px 0px 5px #171717;
+                                }
+                                &:hover{
+                                    cursor: pointer;
+                                }
+
+                                img{
+                                    width: 100%;
+                                }
+                            }  
+                            .btnEdit{
+                                @extend .btnDelete;
+                            }
+                        }  
+                    }    
+                }
+            }
+            .btnDeleteAll{
+                width: 60%;
+                align-self: center;
+                margin-top: 5%;
+                background: linear-gradient(140deg, rgba(246,107,107,1) 0%, rgba(91,113,191,1) 90%);  
+                color:$fontColor;
+                font-weight: 600;
+                font-size: 1rem;
+                padding: 10px 20px;
+                border: none; /* Elimina el borde del botón */
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .btnHidden{
+                display: none;
+            }
+        
+        }
+      
+    }
+   

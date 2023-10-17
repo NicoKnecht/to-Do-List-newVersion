@@ -1,0 +1,273 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kavivanar&display=swap");
+.main-container .tasksCreator-container .tasksCreator-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.main-container {
+  min-height: 100vh;
+}
+.main-container .tasksCreator-container { /*esta caja es para alinear*/
+  display: flex;
+  flex-direction: column;
+}
+.main-container .tasksCreator-container .tasksCreator-wrapper {
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 40vh;
+  width: 100%;
+  background: linear-gradient(140deg, rgb(246, 107, 107) 0%, rgb(91, 113, 191) 90%);
+  padding: 0% 15%;
+}
+@media (max-width: 768px) {
+  .main-container .tasksCreator-container .tasksCreator-wrapper {
+    padding: 10%;
+    min-height: 35vh;
+    align-items: center;
+  }
+}
+.main-container .tasksCreator-container .tasksCreator-wrapper .title {
+  color: #F0F0F0;
+  font-size: 4.4vw;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+@media (max-width: 768px) {
+  .main-container .tasksCreator-container .tasksCreator-wrapper .title {
+    font-size: 6.2vw;
+  }
+}
+@media (max-width: 480px) {
+  .main-container .tasksCreator-container .tasksCreator-wrapper .title {
+    font-size: 6.8vw;
+  }
+}
+.main-container .tasksCreator-container .tasksCreator-wrapper .tasksCreator {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .main-container .tasksCreator-container .tasksCreator-wrapper .tasksCreator {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+.main-container .tasksCreator-container .tasksCreator-wrapper .tasksCreator .input {
+  background-image: url("../img/lupa.png");
+  background-color: transparent;
+  background-position: left 10px center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: solid #F0F0F0;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 75%;
+  padding: 0.5rem 0rem 0.5rem 3rem;
+  margin-right: 1.2rem;
+  color: #EBEBEB;
+  outline: 0; /*le saca el borde interno al input( el borde de seleccion)*/
+}
+@media (max-width: 768px) {
+  .main-container .tasksCreator-container .tasksCreator-wrapper .tasksCreator .input {
+    width: 100%;
+    margin-right: 0rem;
+  }
+}
+.main-container .tasksCreator-container .tasksCreator-wrapper .tasksCreator .input::-moz-placeholder {
+  color: #EBEBEB;
+  opacity: 0.5;
+}
+.main-container .tasksCreator-container .tasksCreator-wrapper .tasksCreator .input::placeholder {
+  color: #EBEBEB;
+  opacity: 0.5;
+}
+.main-container .tasksCreator-container .tasksCreator-wrapper .tasksCreator .btn {
+  background-color: transparent;
+  border: solid #F0F0F0;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  color: #F0F0F0;
+  font-weight: 600;
+  outline: 0;
+  width: 25%;
+}
+@media (max-width: 768px) {
+  .main-container .tasksCreator-container .tasksCreator-wrapper .tasksCreator .btn {
+    padding: 0.5rem 0rem;
+    margin-top: 1.8rem;
+  }
+}
+@media (max-width: 480px) {
+  .main-container .tasksCreator-container .tasksCreator-wrapper .tasksCreator .btn {
+    width: 100%;
+  }
+}
+.main-container .tasksCreator-container .tasksCreator-wrapper .tasksCreator .btn:hover {
+  cursor: pointer;
+}
+.main-container .tasksCreator-container .tasksCreator-wrapper .tasksCreator .btn:active {
+  box-shadow: 0px 0px 5px #171717;
+}
+.main-container .tasksCreator-container .peddingTasks-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0% 15%;
+  margin-top: 3rem;
+}
+@media (max-width: 768px) {
+  .main-container .tasksCreator-container .peddingTasks-wrapper {
+    padding: 10%;
+    margin-top: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .main-container .tasksCreator-container .peddingTasks-wrapper {
+    padding: 5%;
+    margin-top: 2rem;
+  }
+}
+.main-container .tasksCreator-container .peddingTasks-wrapper .subTitle {
+  font-family: "Kavivanar", cursive;
+  font-size: 2.3vw;
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  .main-container .tasksCreator-container .peddingTasks-wrapper .subTitle {
+    font-size: 1.2rem;
+  }
+}
+.main-container .tasksCreator-container .peddingTasks-wrapper .peddingTasks {
+  width: 100%;
+}
+.main-container .tasksCreator-container .peddingTasks-wrapper .peddingTasks .withoutTasks {
+  padding: 2rem;
+  font-family: "Kavivanar", cursive;
+  font-size: 1.3rem;
+  color: #8B9899;
+}
+@media (max-width: 768px) {
+  .main-container .tasksCreator-container .peddingTasks-wrapper .peddingTasks .withoutTasks {
+    font-size: 1.2rem;
+  }
+}
+.main-container .tasksCreator-container .peddingTasks-wrapper .peddingTasks .taskList {
+  margin-top: 1rem;
+  background-color: #EBEBEB;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem;
+}
+@media (max-width: 768px) {
+  .main-container .tasksCreator-container .peddingTasks-wrapper .peddingTasks .taskList {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+.main-container .tasksCreator-container .peddingTasks-wrapper .peddingTasks .taskList .checkYtextWrapper {
+  display: flex;
+  align-items: center;
+  overflow: hidden; /* cuando se excribe"ddddddddddddddddddddd", pero mas largo,
+  al no cortarse la palabra , esta sobrepasa la caja y rompe todo. con el hiden esto no pasa
+   que alguien escriba eso solo deberia oasar por error o boludeando igual  */
+}
+@media (max-width: 768px) {
+  .main-container .tasksCreator-container .peddingTasks-wrapper .peddingTasks .taskList .checkYtextWrapper {
+    width: 100%;
+  }
+}
+.main-container .tasksCreator-container .peddingTasks-wrapper .peddingTasks .taskList .checkYtextWrapper .taskCheckbox {
+  font-weight: 700;
+  display: block;
+  padding: 0rem 0.5rem;
+}
+.main-container .tasksCreator-container .peddingTasks-wrapper .peddingTasks .taskList .checkYtextWrapper .taskCheckbox:hover {
+  cursor: pointer;
+}
+.main-container .tasksCreator-container .peddingTasks-wrapper .peddingTasks .taskList .checkYtextWrapper .taskCheckbox:checked + .taskText {
+  text-decoration: line-through;
+  text-decoration-color: black;
+  color: green;
+}
+.main-container .tasksCreator-container .peddingTasks-wrapper .peddingTasks .taskList .checkYtextWrapper .taskInputEdit {
+  width: 100vw;
+  padding: 0.8rem;
+  font-size: 0.9rem;
+}
+.main-container .tasksCreator-container .peddingTasks-wrapper .peddingTasks .taskList .checkYtextWrapper .taskText {
+  font-family: "Kavivanar", cursive;
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: block;
+  padding: 0rem 0.5rem;
+  line-height: 1.5rem;
+}
+@media (max-width: 768px) {
+  .main-container .tasksCreator-container .peddingTasks-wrapper .peddingTasks .taskList .checkYtextWrapper .taskText {
+    font-size: 1rem;
+  }
+}
+.main-container .tasksCreator-container .peddingTasks-wrapper .peddingTasks .taskList .buttonWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  text-align: center;
+  margin-left: 0.2rem;
+}
+@media (max-width: 768px) {
+  .main-container .tasksCreator-container .peddingTasks-wrapper .peddingTasks .taskList .buttonWrapper {
+    flex-direction: row;
+    justify-content: end;
+    margin-top: 1.2rem;
+  }
+}
+.main-container .tasksCreator-container .peddingTasks-wrapper .peddingTasks .taskList .buttonWrapper .btnDelete, .main-container .tasksCreator-container .peddingTasks-wrapper .peddingTasks .taskList .buttonWrapper .btnEdit {
+  width: 3.2rem;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  outline: 0;
+  margin-top: 0.2rem;
+}
+@media (max-width: 768px) {
+  .main-container .tasksCreator-container .peddingTasks-wrapper .peddingTasks .taskList .buttonWrapper .btnDelete, .main-container .tasksCreator-container .peddingTasks-wrapper .peddingTasks .taskList .buttonWrapper .btnEdit {
+    margin-left: 0.6rem;
+  }
+}
+.main-container .tasksCreator-container .peddingTasks-wrapper .peddingTasks .taskList .buttonWrapper .btnDelete:active, .main-container .tasksCreator-container .peddingTasks-wrapper .peddingTasks .taskList .buttonWrapper .btnEdit:active {
+  box-shadow: 0px 0px 5px #171717;
+}
+.main-container .tasksCreator-container .peddingTasks-wrapper .peddingTasks .taskList .buttonWrapper .btnDelete:hover, .main-container .tasksCreator-container .peddingTasks-wrapper .peddingTasks .taskList .buttonWrapper .btnEdit:hover {
+  cursor: pointer;
+}
+.main-container .tasksCreator-container .peddingTasks-wrapper .peddingTasks .taskList .buttonWrapper .btnDelete img, .main-container .tasksCreator-container .peddingTasks-wrapper .peddingTasks .taskList .buttonWrapper .btnEdit img {
+  width: 100%;
+}
+.main-container .tasksCreator-container .btnDeleteAll {
+  width: 60%;
+  align-self: center;
+  margin-top: 5%;
+  background: linear-gradient(140deg, rgb(246, 107, 107) 0%, rgb(91, 113, 191) 90%);
+  color: #F0F0F0;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none; /* Elimina el borde del botón */
+  border-radius: 5px;
+  cursor: pointer;
+}
+.main-container .tasksCreator-container .btnHidden {
+  display: none;
+}/*# sourceMappingURL=style.css.map */
